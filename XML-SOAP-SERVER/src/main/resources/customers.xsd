@@ -1,0 +1,93 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://manyroads.dev/customers"
+           targetNamespace="http://manyroads.dev/customers"
+           elementFormDefault="qualified">
+
+    <xs:element name="getAllCustomersRequest">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="getAllCustomersResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="customers" type="tns:customer" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCustomerByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="custId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getCustomerByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="customer" type="tns:customer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addCustomerRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="custFirstName" type="xs:string"/>
+                <xs:element name="custLastName" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="addCustomerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="status" type="tns:responseStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateCustomerRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="custId" type="xs:long"/>
+                <xs:element name="custFirstName" type="xs:string"/>
+                <xs:element name="custLastName" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateCustomerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="status" type="tns:responseStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteCustomerByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="custId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deleteCustomerByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="status" type="tns:responseStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="customer">
+        <xs:sequence>
+            <xs:element name="custId" type="xs:long"/>
+            <xs:element name="custFirstName" type="xs:string"/>
+            <xs:element name="custLastName" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="responseStatus">
+        <xs:sequence>
+            <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

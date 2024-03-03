@@ -1,0 +1,17 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+# MYSQL DB
+spring.jpa.hibernate.ddl-auto: update
+
+spring.datasource:
+  url: jdbc:mysql://localhost/customer-db
+  username: user
+  password: pwd
+
+---
+spring.config.activate.on-profile: docker
+server.port: 8080
+
+spring.datasource.url: jdbc:mysql://mysql/customer-db

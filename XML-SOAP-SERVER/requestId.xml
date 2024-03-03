@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://manyroads.dev/customers">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:getCustomerByIdRequest>
+            <gs:custId>1</gs:custId>
+        </gs:getCustomerByIdRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

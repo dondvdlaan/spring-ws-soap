@@ -1,0 +1,11 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://manyroads.dev/customers">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:updateCustomerRequest>
+            <gs:custId>1</gs:custId>
+            <gs:custFirstName>Patata</gs:custFirstName>
+            <gs:custLastName>Duck</gs:custLastName>
+        </gs:updateCustomerRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
